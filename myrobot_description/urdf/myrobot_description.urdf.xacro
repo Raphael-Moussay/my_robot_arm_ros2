@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot name="myrobot_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Arguments to configure the robot behavior -->
+  <xacro:arg name="use_mock_hardware" default="true" />
+
+  <!-- 1. Include the geometric description of the robot (links and joints) -->
+  <xacro:include filename="$(find myrobot_description)/urdf/myrobot_geometry.urdf.xacro" />
+
+  <!-- 2. Include the ros2_control configuration -->
+  <xacro:include filename="$(find myrobot_description)/urdf/myrobot.ros2_control.xacro" />
+
+  <!-- 3. Instantiate the ros2_control controller -->
+  <xacro:myrobot_ros2_control name="FakeSystem" use_mock_hardware="$(arg use_mock_hardware)" />
+
+</robot>

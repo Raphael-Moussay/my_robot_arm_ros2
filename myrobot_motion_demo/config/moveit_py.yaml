@@ -1,0 +1,32 @@
+# Planning scene monitor options
+planning_scene_monitor_options:
+  name: "planning_scene_monitor"
+  robot_description: "robot_description"
+  joint_state_topic: "/joint_states"
+  attached_collision_object_topic: "/monitored_planning_scene"
+  publish_planning_scene_topic: "/monitored_planning_scene"
+  monitored_planning_scene_topic: "/monitored_planning_scene"
+  wait_for_initial_state_timeout: 10.0
+
+# Planning pipelines to load
+planning_pipelines:
+  pipeline_names: ["ompl", "pilz_industrial_motion_planner"]
+
+# OMPL pipeline details
+ompl:
+  planning_plugins:
+    - ompl_interface/OMPLPlanner
+  request_adapters:
+    - default_planning_request_adapters/ResolveConstraintFrames
+    - default_planning_request_adapters/ValidateWorkspaceBounds
+    - default_planning_request_adapters/CheckStartStateBounds
+    - default_planning_request_adapters/CheckStartStateCollision
+  response_adapters:
+    - default_planning_response_adapters/AddTimeOptimalParameterization
+    - default_planning_response_adapters/ValidateSolution
+    - default_planning_response_adapters/DisplayMotionPath
+
+# Pilz industrial motion planner details
+pilz_industrial_motion_planner:
+  planning_plugins:
+    - pilz_industrial_motion_planner/CommandPlanner

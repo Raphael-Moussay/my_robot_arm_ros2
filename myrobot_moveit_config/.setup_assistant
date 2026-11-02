@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: myrobot_description
+    relative_path: urdf/myrobot_description.urdf
+  srdf:
+    relative_path: config/myrobot_description.srdf
+  package_settings:
+    author_name: Raphael Moussay
+    author_email: raphael.moussay@gmail.com
+    generated_timestamp: 1783028822

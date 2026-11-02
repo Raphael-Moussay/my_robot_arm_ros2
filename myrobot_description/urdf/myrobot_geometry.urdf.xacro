@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="myrobot_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Global Material Definitions -->
+  <material name="orange">
+    <color rgba="1.0 0.42 0.0 1.0"/>
+  </material>
+
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-7.9193E-11 -0.0016014 0.017944"
+        rpy="0 0 0" />
+      <mass
+        value="0.42675" />
+      <inertia
+        ixx="0.0005265"
+        ixy="-3.3358E-13"
+        ixz="-5.5903E-13"
+        iyy="0.00051117"
+        iyz="4.5128E-07"
+        izz="0.00092668" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myrobot_description/meshes/base_link.STL" />
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myrobot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link1">
+    <inertial>
+      <origin
+        xyz="-2.48993806827025E-06 -3.22182262536969E-05 0.0271642940472743"
+        rpy="0 0 0" />
+      <mass
+        value="0.262216178032436" />
+      <inertia
+        ixx="0.000288770392771685"
+        ixy="2.04810102253144E-10"
+        ixz="2.11668502786579E-10"
+        iyy="0.0002875161116019"
+        iyz="-2.57354557885949E-08"
+        izz="0.000434288685452672" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myrobot_description/meshes/Link1.STL" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myrobot_description/meshes/Link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint1"
+    type="revolute">
+    <origin
+      xyz="0 3.8106E-05 0.0495"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="12"
+      velocity="5" />
+  </joint>
+  <link
+    name="Link2">
+    <inertial>
+      <origin
+        xyz="0.0538413370060857 -2.10656170979151E-09 -0.00253255278449989"
+        rpy="0 0 0" />
+      <mass
+        value="0.095315907620755" />
+      <inertia
+        ixx="2.87880584513634E-05"
+        ixy="1.64496152864071E-12"
+        ixz="6.85207118883652E-06"
+        iyy="7.32411125799549E-05"
+        iyz="4.49574634323387E-13"
+        izz="5.07633269464637E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myrobot_description/meshes/Link2.STL" />
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myrobot_description/meshes/Link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint2"
+    type="revolute">
+    <origin
+      xyz="0 -0.00068811 0.0704"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="Link1" />
+    <child
+      link="Link2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="2.5"
+      velocity="5" />
+  </joint>
+  <link
+    name="Link3">
+    <inertial>
+      <origin
+        xyz="0.0524781943225279 -1.59401423172056E-08 -0.00219363255264805"
+        rpy="0 0 0" />
+      <mass
+        value="0.0975200910300232" />
+      <inertia
+        ixx="2.95891252035946E-05"
+        ixy="4.66269371854454E-13"
+        ixz="7.92586386256351E-06"
+        iyy="7.83797564145377E-05"
+        iyz="-1.7698721510079E-13"
+        izz="5.55929187863546E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myrobot_description/meshes/Link3.STL" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myrobot_description/meshes/Link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint3"
+    type="revolute">
+    <origin
+      xyz="0.082 0 -0.001"
+      rpy="0 0 0" />
+    <parent
+      link="Link2" />
+    <child
+      link="Link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="12"
+      velocity="5" />
+  </joint>
+  <link
+    name="Link4">
+    <inertial>
+      <origin
+        xyz="0.0819905431552108 0.00396064974324239 -0.00145094408938291"
+        rpy="0 0 0" />
+      <mass
+        value="0.152167844385681" />
+      <inertia
+        ixx="4.43098616467402E-05"
+        ixy="-2.55282292408061E-05"
+        ixz="1.30468333376975E-06"
+        iyy="0.000358872029653601"
+        iyz="-7.77827054811303E-07"
+        izz="0.000331430975437797" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myrobot_description/meshes/Link4.STL" />
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myrobot_description/meshes/Link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint4"
+    type="revolute">
+    <origin
+      xyz="0.0825 0 -0.001"
+      rpy="0 0 0" />
+    <parent
+      link="Link3" />
+    <child
+      link="Link4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="12"
+      velocity="5" />
+  </joint>
+  <link
+    name="Link5">
+    <inertial>
+      <origin
+        xyz="0.0482893143441747 -0.00424320513863131 -0.00034467471522126"
+        rpy="0 0 0" />
+      <mass
+        value="0.0685033308119085" />
+      <inertia
+        ixx="2.62897349154238E-05"
+        ixy="1.96552403132734E-06"
+        ixz="8.52900238237812E-07"
+        iyy="6.88702494219954E-05"
+        iyz="-1.044222885868E-07"
+        izz="4.48991503582136E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myrobot_description/meshes/Link5.STL" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myrobot_description/meshes/Link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint5"
+    type="revolute">
+    <origin
+      xyz="0.0825 0 -0.001"
+      rpy="0 0 0" />
+    <parent
+      link="Link4" />
+    <child
+      link="Link5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="12"
+      velocity="5" />
+  </joint>
+
+</robot>
