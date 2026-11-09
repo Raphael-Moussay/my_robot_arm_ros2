@@ -4,13 +4,16 @@
   <!-- Arguments to configure the robot behavior -->
   <xacro:arg name="use_mock_hardware" default="true" />
 
-  <!-- 1. Include the geometric description of the robot (links and joints) -->
+  <!-- 1. Include the geometric description macro of the manipulator arm -->
   <xacro:include filename="$(find myrobot_description)/urdf/myrobot_geometry.urdf.xacro" />
 
-  <!-- 2. Include the ros2_control configuration -->
-  <xacro:include filename="$(find myrobot_description)/urdf/myrobot.ros2_control.xacro" />
+  <!-- 2. Instantiate the standalone arm with root link 'base_link' -->
+  <xacro:myrobot_arm base_link_name="base_link" parent="">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </xacro:myrobot_arm>
 
-  <!-- 3. Instantiate the ros2_control controller -->
+  <!-- 3. Include and instantiate the ros2_control configuration -->
+  <xacro:include filename="$(find myrobot_description)/urdf/myrobot.ros2_control.xacro" />
   <xacro:myrobot_ros2_control name="FakeSystem" use_mock_hardware="$(arg use_mock_hardware)" />
 
 </robot>
